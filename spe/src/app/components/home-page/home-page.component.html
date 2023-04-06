@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Homepage</title>
+
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">TV Shows</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">My List</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Section -->
+    <section id="main">
+      <!-- Netflix Logo -->
+      <div id="logo">
+      
+      </div>
+      <!-- Search Bar -->
+      <div id="search-bar">
+        <input type="text" placeholder="Search For Movies,Tv shows">
+      </div>
+      <!-- Featured Content -->
+      <div class="slider">
+        <h2>Action Movies</h2>
+        <div class="slider-container">
+          <div class="slider-wrapper">
+            <div class="slider-item">
+              <img src="../../../assets/movie1.png">
+              <h3>Movie Title 1</h3>
+            </div>
+            <div class="slider-item">
+              <img src="../../../assets/movie1.png">
+              <h3>Movie Title 2</h3>
+            </div>
+            <div class="slider-item">
+              <img src="../../../assets/movie1.png">
+              <h3>Movie Title 3</h3>
+            </div>
+            <div class="slider-item">
+              <img src="../../../assets/movie1.png">
+              <h3>Movie Title 3</h3>
+            </div>
+            <div class="slider-item">
+              <img src="../../../assets/movie1.png">
+              <h3>Movie Title 3</h3>
+            </div>
+            <!-- Add more movies here -->
+          </div>
+          
+        </div>
+        <div style=" display:flex; justify-content:center">
+          <button class="slider-prev"><</button>
+          <button class="slider-next">></button>
+        </div>
+        <h2>Comedy Movies</h2>
+        <div class="slider-container">
+          <div class="slider-wrapper">
+            <div class="slider-item">
+              <img src="../../../assets/movie1.png">
+              <h3>Movie Title 1</h3>
+            </div>
+            <div class="slider-item">
+              <img src="../../../assets/movie1.png">
+              <h3>Movie Title 2</h3>
+            </div>
+            <div class="slider-item">
+              <img src="../../../assets/movie1.png">
+              <h3>Movie Title 3</h3>
+            </div>
+            <div class="slider-item">
+              <img src="../../../assets/movie1.png">
+              <h3>Movie Title 3</h3>
+            </div>
+            <div class="slider-item">
+              <img src="../../../assets/movie1.png">
+              <h3>Movie Title 3</h3>
+            </div>
+            <!-- Add more movies here -->
+          </div>
+         
+        </div>
+        <div style=" display:flex; justify-content:center">
+          <button class="slider-prev"><</button>
+          <button class="slider-next">></button>
+        </div>
+        <h2>Thriller Movies</h2>
+        <div class="slider-container">
+          <div class="slider-wrapper">
+            <div class="slider-item">
+              <img src="../../../assets/movie1.png">
+              <h3>Movie Title 1</h3>
+            </div>
+            <div class="slider-item">
+              <img src="../../../assets/movie1.png">
+              <h3>Movie Title 2</h3>
+            </div>
+            <div class="slider-item">
+              <img src="../../../assets/movie1.png">
+              <h3>Movie Title 3</h3>
+            </div>
+            <div class="slider-item">
+              <img src="../../../assets/movie1.png">
+              <h3>Movie Title 3</h3>
+            </div>
+            <div class="slider-item">
+              <img src="../../../assets/movie1.png">
+              <h3>Movie Title 3</h3>
+            </div>
+            <!-- Add more movies here -->
+          </div>
+         
+        </div>
+        <div style=" display:flex; justify-content:center">
+          <button class="slider-prev"><</button>
+          <button class="slider-next">></button>
+        </div>
+        <h2>Scifi Movies</h2>
+        <div class="slider-container">
+          <div class="slider-wrapper">
+            <div class="slider-item">
+              <img src="../../../assets/movie1.png">
+              <h3>Movie Title 1</h3>
+            </div>
+            <div class="slider-item">
+              <img src="../../../assets/movie1.png">
+              <h3>Movie Title 2</h3>
+            </div>
+            <div class="slider-item">
+              <img src="../../../assets/movie1.png">
+              <h3>Movie Title 3</h3>
+            </div>
+            <div class="slider-item">
+              <img src="../../../assets/movie1.png">
+              <h3>Movie Title 3</h3>
+            </div>
+            <div class="slider-item">
+              <img src="../../../assets/movie1.png">
+              <h3>Movie Title 3</h3>
+            </div>
+            <!-- Add more movies here -->
+          </div>
+         
+        </div>
+        <div style=" display:flex; justify-content:center">
+          <button class="slider-prev"><</button>
+          <button class="slider-next">></button>
+        </div>
+      </div>
+      
+      <!--  -->
+    </section>
+    
+    <!-- Footer -->
+
+    <script>
+      const sliderWrapper = document.querySelector('.slider-wrapper');
+    const sliderPrev = document.querySelector('.slider-prev');
+    const sliderNext = document.querySelector('.slider-next');
+    let sliderIndex = 0;
+    
+    function slideTo(index) {
+      sliderWrapper.style.transform = `translateX(-${index * 33.33}%)`;
+    }
+    
+    sliderNext.addEventListener('click', function() {
+      sliderIndex++;
+      console.log(sliderIndex)
+      if (sliderIndex > 2) {
+        sliderIndex = 0;
+      }
+      slideTo(sliderIndex);
+    });
+    
+    sliderPrev.addEventListener('click', function() {
+      sliderIndex--;
+      if (sliderIndex < 0) {
+        sliderIndex = 2;
+      }
+      slideTo(sliderIndex);
+    });
+    
+    </script>
+   
+  </body>
+  
+</html>

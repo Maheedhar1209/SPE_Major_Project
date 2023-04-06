@@ -1,0 +1,157 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+/* Top Navigation Bar styles */
+nav {
+  background-color: #141414;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Main Section styles */
+
+
+#logo {
+  margin-bottom: 50px;
+}
+
+#logo img {
+  width: 150px;
+}
+
+#search-bar {
+  width: 60%;
+  margin-bottom: 50px;
+}
+
+#search-bar input[type="text"] {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.2rem;
+}
+
+
+
+
+
+#categories {
+  width: 80%;
+}
+
+#categories h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#categories ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+#categories li {
+  flex-basis: 30%;
+  margin-bottom: 20px;
+}
+
+#categories a {
+  display: block;
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  padding: 20px;
+  text-align: center;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+#categories a:hover {
+  background-color: #f5f5f5;
+  border-color: #d5d5d5;
+}
+
+/* Footer styles */
+
+.slider {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.slider h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.slider-container {
+  display: inline-flex;
+  overflow: hidden;
+  
+}
+
+.slider-wrapper {
+  display: inline-flex;
+  transition: transform 0.5s;
+}
+
+.slider-item {
+  flex: 0 0 33.33%;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.slider-item img {
+  width: 100%;
+  
+}
+
+.slider-item h3 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.slider-prev,
+.slider-next {
+  border: none;
+  background: none;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  
+}
+
+.slider-prev {
+  margin-right: 10px;
+}
+
+.slider-next:hover,
+.slider-prev:hover {
+  color: #000;
+}
