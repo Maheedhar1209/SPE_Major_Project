@@ -2,11 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix Homepage</title>
 
   </head>
   <body>
+   
     <!-- Top Navigation Bar -->
     <nav>
       <ul>
@@ -24,12 +26,13 @@
       
       </div>
       <!-- Search Bar -->
-      <div id="search-bar">
-        <input type="text" placeholder="Search For Movies,Tv shows">
+      <div id="search-bar" style="display: flex;">
+        <input type="text" placeholder="Search For Movies,Tv shows" style="display: flex;"   [(ngModel)]="movie_title" />
+        <button type="submit" (click)="moviesearch()" style="width:10%; height:30px;background-color:white; display:flex; text-align: center; font-size: large; border: 0cm; margin-left: 5px; padding-left: 4px; margin-top: 5px;"><i class="fa fa-search"></i></button>
       </div>
       <!-- Featured Content -->
       <div class="slider">
-        <h2>Action Movies</h2>
+        <h2>Action Movies / TV Shows</h2>
         <div class="slider-container">
           <div class="slider-wrapper">
             <div class="slider-item">
@@ -60,10 +63,10 @@
           <button class="slider-prev"><</button>
           <button class="slider-next">></button>
         </div>
-        <h2>Comedy Movies</h2>
+        <h2>Comedy Movies / TV Shows</h2>
         <div class="slider-container">
-          <div class="slider-wrapper">
-            <div class="slider-item">
+          <div class="slider-wrapper" >
+            <div class="slider-item" >
               <img src="../../../assets/movie1.png">
               <h3>Movie Title 1</h3>
             </div>
@@ -85,13 +88,13 @@
             </div>
             <!-- Add more movies here -->
           </div>
-         
+          <div style=" display:flex; justify-content:center">
+            <button class="slider-prev"><</button>
+            <button class="slider-next" (click)="slide()">></button>
+          </div>
         </div>
-        <div style=" display:flex; justify-content:center">
-          <button class="slider-prev"><</button>
-          <button class="slider-next">></button>
-        </div>
-        <h2>Thriller Movies</h2>
+       
+        <h2>Thriller Movies / TV Shows</h2>
         <div class="slider-container">
           <div class="slider-wrapper">
             <div class="slider-item">
@@ -122,7 +125,7 @@
           <button class="slider-prev"><</button>
           <button class="slider-next">></button>
         </div>
-        <h2>Scifi Movies</h2>
+        <h2>Scifi Movies / TV Showd</h2>
         <div class="slider-container">
           <div class="slider-wrapper">
             <div class="slider-item">
@@ -160,34 +163,9 @@
     
     <!-- Footer -->
 
-    <script>
-      const sliderWrapper = document.querySelector('.slider-wrapper');
-    const sliderPrev = document.querySelector('.slider-prev');
-    const sliderNext = document.querySelector('.slider-next');
-    let sliderIndex = 0;
-    
-    function slideTo(index) {
-      sliderWrapper.style.transform = `translateX(-${index * 33.33}%)`;
-    }
-    
-    sliderNext.addEventListener('click', function() {
-      sliderIndex++;
-      console.log(sliderIndex)
-      if (sliderIndex > 2) {
-        sliderIndex = 0;
-      }
-      slideTo(sliderIndex);
-    });
-    
-    sliderPrev.addEventListener('click', function() {
-      sliderIndex--;
-      if (sliderIndex < 0) {
-        sliderIndex = 2;
-      }
-      slideTo(sliderIndex);
-    });
-    
+    <script async src="https://cse.google.com/cse.js?cx=6271e80630a164067">
     </script>
+    <div class="gcse-search"></div>
    
   </body>
   
