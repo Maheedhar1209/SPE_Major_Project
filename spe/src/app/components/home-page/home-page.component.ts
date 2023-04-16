@@ -2,6 +2,8 @@ import { Component, Renderer2, ElementRef } from '@angular/core';
 //import { GoogleMapsAPIWrapper } from '@google/maps';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { HomePageServiceService } from 'src/app/services/home-page-service.service';
+import { Movie_Details } from 'src/app/models/Movie_Details.model';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -10,7 +12,10 @@ import { map } from 'rxjs/operators';
 export class HomePageComponent {
   divElement:any;
 movie_title: any;
-  constructor(private renderer: Renderer2, private el: ElementRef,private httpClient:HttpClient) {}
+moviedetails?: Movie_Details;
+movie_details = "Please enter a movie";
+showElement: boolean = false;
+  constructor(private renderer: Renderer2, private el: ElementRef,private httpClient:HttpClient,private homepageservice:HomePageServiceService) {}
 
   ngOnInit() {
     this.divElement = this.el.nativeElement.querySelector('.slider-next');
@@ -21,27 +26,30 @@ movie_title: any;
     this.renderer.setStyle(this.divElement, 'transform', '`translateX(-${2*33.33}%)`');
   }
   moviesearch(){
-    
-      const apiKey = 'AIzaSyAiKvaBSuFPay27HYSLvxJtdNvDDuIl2L0'; // Replace with your API key
-      const apiUrl = `https://www.googleapis.com/customsearch/v1?q=${this.movie_title} ott platforms&cx=6271e80630a164067&key=${apiKey}`; // Replace with your custom search engine ID
-  
-      this.httpClient.get(apiUrl,{ responseType: 'text' }).pipe(
-        map((responseData: string) => {
-          // Parse the JSON data
-          const data = JSON.parse(responseData);
-          return data;
-        })
-      ).subscribe(
-        data => {
-          // Do something with the decoded data
-          console.log(data);
-        },
-        error => {
-          // Handle any errors
-          console.error(error);
+      console.log(this.movie_title)
+      if (this.movie_title=="" || this.movie_title == null)
+       alert("Please type a movie");
+      else{
+       
+        this.homepageservice.getMovieDetails(this.movie_title)
+        .subscribe((res:Movie_Details)=>{
+        this.moviedetails=res;
+        if (this.moviedetails==null)
+          alert("movie not found,try another movie");
+        else{
+        this.movie_details="Movie:"+this.moviedetails?.movie_name + "\n" + "Release_data:" + this.moviedetails?.release_date + " "+"OTT platforms : " + this.moviedetails?.ott_platforms; 
+        console.log(this.moviedetails.movie_name);
+       this.closepopup();
         }
-      );
+        });
+      
+      
+      
+      }
       //console.log(ans);
     
+  }
+  closepopup(){
+    this.showElement=!this.showElement;
   }
 }

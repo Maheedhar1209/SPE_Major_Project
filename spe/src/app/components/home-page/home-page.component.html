@@ -18,9 +18,16 @@
         <li><a href="#">My List</a></li>
       </ul>
     </nav>
-
+    <div class="popup" *ngIf="showElement">
+      <button id="close" (click)="closepopup()">&times;</button>
+      <h2>Movie Details</h2>
+      <p>
+          {{movie_details}}
+      </p>
+      <a href="#">Add to favourites</a>
+  </div>
     <!-- Main Section -->
-    <section id="main">
+    <section id="main" *ngIf="!showElement">
       <!-- Netflix Logo -->
       <div id="logo">
       

@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { LoginComponent } from './components/login/login.component';
+import { PopupmoviedetailsComponent } from './components/popupmoviedetails/popupmoviedetails.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    LoginComponent
+    LoginComponent,
+    PopupmoviedetailsComponent
   ],
   imports: [
     BrowserModule,

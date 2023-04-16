@@ -10,23 +10,19 @@
         <div class="square" style="--i: 4"></div>
         <div class="container">
             <div class="form">
-                <h2>Login Form</h2>
+                <h2>Login</h2>
                 <form>
-                    <div class="input__box">
-                        <input type="text" placeholder="Username" />
+                    <div  *ngIf="otp_verify"  class="input__box">
+                        <input type="text" placeholder="phone_number" />
                     </div>
-                    <div class="input__box">
-                        <input type="password" placeholder="Password" />
+                    <div  *ngIf="otp_verify" class="input__box">
+                        <input type="password" placeholder="otp" />
                     </div>
-                    <div class="input__box">
-                        <input type="submit" value="Login" />
+                    <button *ngIf="otp_verify" type="button" (click)="verifyotppage()" >Send otp</button>
+                    <div  *ngIf="!otp_verify" class="input__box">
+                        <input type="text" placeholder="Verify otp" />
                     </div>
-                    <p class="forget">
-                        Forgot Password? <a href="#">Click Here</a>
-                    </p>
-                    <p class="forget">
-                        Don't have an account? <a href="#">Sign Up</a>
-                    </p>
+                    <button  *ngIf="!otp_verify" type="button">Verify otp</button>
                 </form>
             </div>
         </div>
