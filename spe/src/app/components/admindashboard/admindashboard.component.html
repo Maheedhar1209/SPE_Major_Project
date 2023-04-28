@@ -1,0 +1,36 @@
+<body>
+<div class="container">
+    <button *ngIf="!showFormFlag" class="add-movie" (click)="showForm() " style="margin-right: 15%;">Add Movie</button>
+    <button *ngIf="!showFormFlag" class="add-movie" (click)="showForm() " style="margin-right: 15%;">Change Movie Details</button>
+    <button  *ngIf="!showFormFlag" class="add-movie" (click)="showForm()">Delete Movie</button>
+    <div class="form-container" *ngIf="showFormFlag" style="color: white;">
+      <form (submit)="onSubmit()">
+        <div class="form-group">
+          <label for="movie_name">Movie Name:</label>
+          <input type="text" name="movie_name" [(ngModel)]="movie.name" required>
+        </div>
+        <div class="form-group">
+          <label for="release_date">Release Date:</label>
+          <input type="date" name="release_date" [(ngModel)]="movie.releaseDate" required>
+        </div>
+        <div class="form-group">
+          <label for="genre">Genre:</label>
+          <input type="text" name="genre" [(ngModel)]="movie.genre" required>
+        </div>
+        <div class="form-group">
+          <label for="about_movie">About Movie:</label>
+          <textarea name="about_movie" [(ngModel)]="movie.about" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="ott_platforms">OTT Platforms:</label>
+          <input type="text" name="ott_platforms" [(ngModel)]="movie.ottPlatforms" required>
+        </div>
+        <div class="form-group">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+  
+  

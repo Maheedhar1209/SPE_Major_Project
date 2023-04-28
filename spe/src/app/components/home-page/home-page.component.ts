@@ -38,7 +38,7 @@ showElement: boolean = false;
         if (this.moviedetails==null)
           alert("movie not found,try another movie");
         else{
-        this.movie_details="Movie:"+this.moviedetails?.movie_name + "\n" + "Release_data:" + this.moviedetails?.release_date + " "+"OTT platforms : " + this.moviedetails?.ott_platforms; 
+        this.movie_details="Movie name is "+this.moviedetails?.movie_name  + ".Release date is " + this.moviedetails?.release_date + ".OTT platforms are " + this.moviedetails?.ott_platforms; 
         console.log(this.moviedetails.movie_name);
         localStorage.setItem("movie_details",JSON.stringify(this.movie_details));
         this.router.navigate(["popup"]);  

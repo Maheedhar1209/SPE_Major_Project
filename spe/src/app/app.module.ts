@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { LoginComponent } from './components/login/login.component';
 import { PopupmoviedetailsComponent } from './components/popupmoviedetails/popupmoviedetails.component';
+import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     LoginComponent,
-    PopupmoviedetailsComponent
+    PopupmoviedetailsComponent,
+    AdmindashboardComponent
   ],
   imports: [
     BrowserModule,
