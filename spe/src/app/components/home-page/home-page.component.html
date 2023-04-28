@@ -7,7 +7,7 @@
     <title>Netflix Homepage</title>
 
   </head>
-  <body>
+  <body style="background-color: black">
    
     <!-- Top Navigation Bar -->
     <nav>
@@ -16,16 +16,11 @@
         <li><a href="#">TV Shows</a></li>
         <li><a href="#">Movies</a></li>
         <li><a href="#">My List</a></li>
+        <li (click)="logout()"><a style="cursor: pointer;" >Logout</a></li>
       </ul>
     </nav>
-    <div class="popup" *ngIf="showElement">
-      <button id="close" (click)="closepopup()">&times;</button>
-      <h2>Movie Details</h2>
-      <p>
-          {{movie_details}}
-      </p>
-      <a href="#">Add to favourites</a>
-  </div>
+   
+  
     <!-- Main Section -->
     <section id="main" *ngIf="!showElement">
       <!-- Netflix Logo -->
@@ -33,14 +28,15 @@
       
       </div>
       <!-- Search Bar -->
-      <div id="search-bar" style="display: flex;">
-        <input type="text" placeholder="Search For Movies,Tv shows" style="display: flex;"   [(ngModel)]="movie_title" />
-        <button type="submit" (click)="moviesearch()" style="width:10%; height:30px;background-color:white; display:flex; text-align: center; font-size: large; border: 0cm; margin-left: 5px; padding-left: 4px; margin-top: 5px;"><i class="fa fa-search"></i></button>
-      </div>
+      
       <!-- Featured Content -->
       <div class="slider">
-        <h2>Action Movies / TV Shows</h2>
-        <div class="slider-container">
+        <div id="search-bar" style="display: flex;  top: 15px;">
+          <input type="text" placeholder="Search For Movies,Tv shows" style="display: flex; background-color: black; border-color: white; color: white;"   [(ngModel)]="movie_title" />
+          <button type="submit" (click)="moviesearch()" style="width:10%; height:30px;background-color:black;color: white; display:flex; text-align: center; font-size: large; border: 0cm; margin-left: 5px; padding-left: 4px; margin-top: 5px;"><i class="fa fa-search"></i></button>
+        </div>
+        <h2 style="color: white;">Action Movies / TV Shows</h2>
+        <div class="slider-container" style="color: white;">
           <div class="slider-wrapper">
             <div class="slider-item">
               <img src="../../../assets/movie5.jpeg">
@@ -66,12 +62,12 @@
           </div>
           
         </div>
-        <div style=" display:flex; justify-content:center">
-          <button class="slider-prev"><</button>
-          <button class="slider-next">></button>
+        <div style=" display:flex; justify-content:center; color: white;">
+          <button style="color: white;" class="slider-prev"><</button>
+          <button  style="color: white;" class="slider-next">></button>
         </div>
-        <h2>Comedy Movies / TV Shows</h2>
-        <div class="slider-container">
+        <h2 style="color: white;">Comedy Movies / TV Shows</h2>
+        <div class="slider-container" style="color: white;">
           <div class="slider-wrapper" >
             <div class="slider-item" >
               <img src="../../../assets/movie1.png">
@@ -96,13 +92,13 @@
             <!-- Add more movies here -->
           </div>
           <div style=" display:flex; justify-content:center">
-            <button class="slider-prev"><</button>
-            <button class="slider-next" (click)="slide()">></button>
+            <button style="color: white;" class="slider-prev"><</button>
+            <button style="color: white;" class="slider-next" (click)="slide()">></button>
           </div>
         </div>
        
-        <h2>Thriller Movies / TV Shows</h2>
-        <div class="slider-container">
+        <h2 style="color: white;">Thriller Movies / TV Shows</h2>
+        <div class="slider-container" style="color: white;">
           <div class="slider-wrapper">
             <div class="slider-item">
               <img src="../../../assets/movie4.jpeg">
@@ -128,12 +124,12 @@
           </div>
          
         </div>
-        <div style=" display:flex; justify-content:center">
-          <button class="slider-prev"><</button>
-          <button class="slider-next">></button>
+        <div  style="color: white;" style=" display:flex; justify-content:center">
+          <button style="color: white;" class="slider-prev"><</button>
+          <button style="color: white;" class="slider-next">></button>
         </div>
-        <h2>Scifi Movies / TV Showd</h2>
-        <div class="slider-container">
+        <h2 style="color: white;">Scifi Movies / TV Showd</h2>
+        <div style="color: white;" class="slider-container">
           <div class="slider-wrapper">
             <div class="slider-item">
               <img src="../../../assets/movie1.png">
@@ -159,9 +155,9 @@
           </div>
          
         </div>
-        <div style=" display:flex; justify-content:center">
-          <button class="slider-prev"><</button>
-          <button class="slider-next">></button>
+        <div  style="color: white;" style=" display:flex; justify-content:center">
+          <button style="color: white;" class="slider-prev"><</button>
+          <button style="color: white;" class="slider-next">></button>
         </div>
       </div>
       

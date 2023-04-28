@@ -4,7 +4,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { LoginComponent } from './components/login/login.component';
 import { PopupmoviedetailsComponent } from './components/popupmoviedetails/popupmoviedetails.component';
 
-const routes: Routes = [{path:'', component:HomePageComponent},{path:'login',component:LoginComponent}];
+const routes: Routes = [{path:'', component:HomePageComponent},{path:'login',component:LoginComponent},{path:'popup',component:PopupmoviedetailsComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

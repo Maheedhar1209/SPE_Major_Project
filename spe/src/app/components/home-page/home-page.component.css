@@ -5,7 +5,10 @@
   box-sizing: border-box;
 
 }
-
+section{
+  background-color: black;
+  
+}
 /* Top Navigation Bar styles */
 nav {
   background-color: #141414;
@@ -13,6 +16,7 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 10;
+  margin-top: 0px;
 }
 
 nav ul {
@@ -43,6 +47,7 @@ nav ul li a {
 #search-bar {
   width: 60%;
   margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 #search-bar input[type="text"] {

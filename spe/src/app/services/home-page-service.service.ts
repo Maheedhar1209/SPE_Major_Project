@@ -16,4 +16,11 @@ export class HomePageServiceService {
     console.log("fdfd")
     return this.httpclient.get(`${baseUrl}/Movie?movie_name=${movie_name}`)
   }
+  sendmoviedetails(movie_details:any,phone_number:String){
+    console.log("fdfd")
+    return this.httpclient.get(`${baseUrl}/sms?phone_number=${phone_number}&movie_details=${movie_details}`,);
+  }
+  logout(){
+    localStorage.removeItem("user_login");
+  }
 }

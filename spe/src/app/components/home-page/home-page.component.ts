@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { HomePageServiceService } from 'src/app/services/home-page-service.service';
 import { Movie_Details } from 'src/app/models/Movie_Details.model';
+import { Route, Router } from '@angular/router';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -15,7 +16,7 @@ movie_title: any;
 moviedetails?: Movie_Details;
 movie_details = "Please enter a movie";
 showElement: boolean = false;
-  constructor(private renderer: Renderer2, private el: ElementRef,private httpClient:HttpClient,private homepageservice:HomePageServiceService) {}
+  constructor(private router:Router,private renderer: Renderer2, private el: ElementRef,private httpClient:HttpClient,private homepageservice:HomePageServiceService) {}
 
   ngOnInit() {
     this.divElement = this.el.nativeElement.querySelector('.slider-next');
@@ -39,8 +40,9 @@ showElement: boolean = false;
         else{
         this.movie_details="Movie:"+this.moviedetails?.movie_name + "\n" + "Release_data:" + this.moviedetails?.release_date + " "+"OTT platforms : " + this.moviedetails?.ott_platforms; 
         console.log(this.moviedetails.movie_name);
-       this.closepopup();
-        }
+        localStorage.setItem("movie_details",JSON.stringify(this.movie_details));
+        this.router.navigate(["popup"]);  
+      }
         });
       
       
@@ -51,5 +53,9 @@ showElement: boolean = false;
   }
   closepopup(){
     this.showElement=!this.showElement;
+  }
+  logout(){
+    this.homepageservice.logout();
+    this.router.navigate(["/login"]);
   }
 }
