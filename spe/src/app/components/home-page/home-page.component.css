@@ -5,10 +5,7 @@
   box-sizing: border-box;
 
 }
-section{
-  background-color: black;
-  
-}
+
 /* Top Navigation Bar styles */
 nav {
   background-color: #141414;
@@ -16,7 +13,6 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 10;
-  margin-top: 0px;
 }
 
 nav ul {
@@ -27,7 +23,7 @@ nav ul {
 }
 
 nav ul li a {
-  color: #fff;
+  color: #ff0000;
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: bold;
@@ -47,7 +43,6 @@ nav ul li a {
 #search-bar {
   width: 60%;
   margin-bottom: 50px;
-  margin-top: 50px;
 }
 
 #search-bar input[type="text"] {
@@ -58,7 +53,13 @@ nav ul li a {
   font-size: 1.2rem;
 }
 
-
+.butt {
+  color: red;
+  background-color: black;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+}
 
 
 
@@ -123,6 +124,7 @@ nav ul li a {
 .slider-wrapper {
   display: inline-flex;
   transition: transform 0.5s;
+  transform: translateX(0px);
 }
 
 .slider-item {
@@ -160,54 +162,20 @@ nav ul li a {
 .slider-prev:hover {
   color: #000;
 }
-
-
-.popup{
-  background-color: rgb(191, 57, 191);
-  width: 420px;
-  padding: 30px 40px;
-  position: absolute;
-  transform: translate(-50%,-50%);
-  left: 50%;
-  top: 50%;
-  border-radius: 38px;
-  font-family: "Poppins",sans-serif;
-  
-  text-align: center;
-  }
-  .popup button{
-  display: block;
-  margin:  0 0 20px auto;
-  background-color: transparent;
-  font-size: 30px;
-  color: #ffffff;
-  background:blue;
-  border-radius: 100%;
-  width: 40px;
-  height: 40px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  }
-  .popup h2{
-  margin-top: -20px;
-  }
-  .popup p{
-  font-size: 14px;
-  text-align: justify;
-  margin: 20px 0;
-  line-height: 25px;
-  }
-  .popup a{
-  display: block;
-  width: 150px;
+.dropdown {
+  color: black;
+  display: inline-block;
   position: relative;
-  margin: 10px auto;
-  text-align: center;
-  background-color: blue;
-  border-radius: 20px;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 8px 0;
-  }
-  
+}
+.dropdown-options {
+  color: black;
+  background-color: #000;
+  display: none;
+  position: absolute;
+  overflow: auto;
+}
+
+.dropdown:hover .dropdown-options {
+  color: black;
+  display: block;
+}
