@@ -27,14 +27,15 @@
         <div class="dropdown">
           <button class="butt">Movies</button>
           <div class="dropdown-options">
-            <option></option><a href="#action">Action</a>
-            <option></option><a href="#comedy">Comedy</a>
-            <option></option><a href="#thriller">Thriller</a>
-            <option></option><a href="#scifi">SciFi</a>
+            <option></option><a href="#action">Action <button (click)="Genre('Action', 'action_slid')">click here</button></a>
+            <option></option><a href="#comedy">Comedy <button (click)="Genre('Comedy', 'comedy_slid')">click here</button></a>
+            <option></option><a href="#thriller">Thriller <button (click)="Genre('Thriller', 'thriller_slid')">click here</button></a>
+            <option></option><a href="#scifi">SciFi <button (click)="Genre('SciFi', 'scifi_slid')">click here</button></a>
           </div>
         </div>
       </li>
-        <li><a href="#">My List</a></li>
+        <li><a href="#mylist">My List</a>
+          <button id="myList" (click)="myList()">click here</button></li>
       </ul>
     </nav>
 
@@ -53,135 +54,96 @@
       <div id = "action" class="slider">
         <h2>Action Movies</h2>
         <div class="slider-container" >
-          <div class="slider-wrapper" id="look">
-            <div class="slider-item">
-              <img id="pic1" src="../../../assets/movie5.jpeg">
-              <h3>Movie Title 1</h3>
-            </div>
-            <div class="slider-item">
-              <img src="../../../assets/movie4.jpeg" id="pic2">
-              <h3>Movie Title 2</h3>
-            </div>
-            <div class="slider-item">
-              <img src="../../../assets/movie6.jpeg" id="pic3">
-              <h3>Movie Title 3</h3>
-            </div>
-            <div class="slider-item" id="pic4">
-              <img src="../../../assets/movie1.png">
-              <h3>Movie Title 3</h3>
-            </div>
-            <div class="slider-item" id="pic5">
-              <img src="../../../assets/movie1.png">
-              <h3>Movie Title 3</h3>
-            </div> -->
+          <div class="slider-wrapper" id="action_slid">
+            
             <!-- Add more movies here -->
           </div>
           
         </div>
         <div style=" display:flex; justify-content:center">
-          <button class="slider-prev" (click)="prev()"
+          <button class="slider-prev" (click)="prev('action_slid')"
           >
           prev
           </button>
-          <button class="slider-next" (click)="next()"
+          <button class="slider-next" (click)="next('action_slid')"
           >
           next
         </button>
         </div>
         <h2>Comedy Movies</h2>
         <div id = "comedy" class="slider-container">
-          <div class="slider-wrapper">
-            <div class="slider-item">
-              <img src="../../../assets/movie1.png">
-              <h3>Movie Title 1</h3>
-            </div>
-            <div class="slider-item">
-              <img src="../../../assets/movie5.jpeg">
-              <h3>Movie Title 2</h3>
-            </div>
-            <div class="slider-item">
-              <img src="../../../assets/movie6.jpeg">
-              <h3>Movie Title 3</h3>
-            </div>
-            <div class="slider-item">
-              <img src="../../../assets/movie1.png">
-              <h3>Movie Title 3</h3>
-            </div>
-            <div class="slider-item">
-              <img src="../../../assets/movie1.png">
-              <h3>Movie Title 3</h3>
-            </div>
+          <div class="slider-wrapper" id="comedy_slid">
+            
             <!-- Add more movies here -->
           </div>
          
         </div>
         <div style=" display:flex; justify-content:center">
-          <button class="slider-prev"><</button>
-          <button id = "thriller" class="slider-next">></button>
+          <button class="slider-prev" (click)="prev('comedy_slid')"
+          >
+          prev
+          </button>
+          <button class="slider-next" (click)="next('comedy_slid')"
+          >
+          next
+        </button>
         </div>
         <h2>Thriller Movies</h2>
         <div class="slider-container">
-          <div class="slider-wrapper">
-            <div class="slider-item">
-              <img src="../../../assets/movie4.jpeg">
-              <h3>Movie Title 1</h3>
-            </div>
-            <div class="slider-item">
-              <img src="../../../assets/movie5.jpeg">
-              <h3>Movie Title 2</h3>
-            </div>
-            <div class="slider-item">
-              <img src="../../../assets/movie6.jpeg">
-              <h3>Movie Title 3</h3>
-            </div>
-            <div class="slider-item">
-              <img src="../../../assets/movie1.png">
-              <h3>Movie Title 3</h3>
-            </div>
-            <div class="slider-item">
-              <img src="../../../assets/movie1.png">
-              <h3>Movie Title 3</h3>
-            </div>
+          <div class="slider-wrapper" id="thriller_slid">
             <!-- Add more movies here -->
           </div>
          
         </div>
         <div style=" display:flex; justify-content:center">
-          <button class="slider-prev"><</button>
-          <button id = "scifi" class="slider-next">></button>
+          <button class="slider-prev" (click)="prev('thriller_slid')"
+          >
+          prev</button>
+          <button id = "scifi" class="slider-next" (click)="prev('thriller_slid')"
+          >
+          next
+        </button>
         </div>
         <h2>Scifi Movies</h2>
         <div class="slider-container">
-          <div class="slider-wrapper">
-            <div class="slider-item">
-              <img src="../../../assets/movie1.png">
-              <h3>Movie Title 1</h3>
+            <div class="slider-wrapper" id="scifi_slid">
             </div>
-            <div class="slider-item">
-              <img src="../../../assets/movie4.jpeg">
-              <h3>Movie Title 2</h3>
-            </div>
-            <div class="slider-item">
-              <img src="../../../assets/movie5.jpeg">
-              <h3>Movie Title 3</h3>
-            </div>
-            <div class="slider-item">
-              <img src="../../../assets/movie1.png">
-              <h3>Movie Title 3</h3>
-            </div>
-            <div class="slider-item">
-              <img src="../../../assets/movie1.png">
-              <h3>Movie Title 3</h3>
-            </div>
+
+            
             <!-- Add more movies here -->
+          </div>
+          <div style=" display:flex; justify-content:center">
+            <button class="slider-prev" (click)="prev('scifi_slid')"
+            >
+            prev</button>
+            <button class="slider-next" (click)="prev('scifi_slid')"
+            >
+            next
+          </button>
+          </div>
+        <!-- </div> -->
+        
+        <h2 id="head">My List</h2>
+        <!-- let data = myList();
+        console.log(data); -->
+        <div id="cont" class="slider-container">
+          <div id="mylist" class="slider-wrapper">
+          
           </div>
          
         </div>
         <div style=" display:flex; justify-content:center">
-          <button class="slider-prev"><</button>
-          <button class="slider-next">></button>
+          <button class="slider-prev" (click)="prev('mylist')"
+          >
+          prev
+          </button>
+          <button class="slider-next" (click)="next('mylist')"
+          >
+          next
+        </button>
         </div>
       </div>
+
       
       <!--  -->
     </section>
