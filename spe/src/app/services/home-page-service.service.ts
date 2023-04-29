@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { response } from 'express';
 import { Observable } from 'rxjs';
 
@@ -23,4 +23,22 @@ export class HomePageServiceService {
   logout(){
     localStorage.removeItem("user_login");
   }
+  httpHeaders = new HttpHeaders({
+    'Content-Type': "application/json",
+    'Access-Control-Allow-Origin': "*"
+  })
+
+
+params = new HttpParams()
+                  .set('user_id', '1');
+
+postMyList(user_id: String) {
+  let url = "http://localhost:8101/MyList";
+  return this.httpclient.post<any>(url, null, {params: this.params, headers: this.httpHeaders});
+}
+
+postGenre(genre: string) {
+  let url ="http://localhost:8101/Genres";
+  return this.httpclient.post<any>(url, null, {headers: this.httpHeaders, params: new HttpParams().set('genre', genre)});
+}
 }

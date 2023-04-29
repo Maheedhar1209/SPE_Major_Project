@@ -6,8 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  otp_verify=true;
-  verifyotppage(){
-    this.otp_verify=false;
-  }
+
 }
