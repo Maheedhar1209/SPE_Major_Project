@@ -34,14 +34,14 @@
                 <h2>Login</h2>
                 <form>
                     <div  *ngIf="otp_verify"  class="input__box">
-                        <input type="text" placeholder="phone_number" [(ngModel)]="phone_number" [ngModelOptions]="{standalone: true}" required>
+                        <input type="text" placeholder="phone_number" [(ngModel)]="phone_number" />
                     </div>
                   
                     <button *ngIf="otp_verify" type="button" (click)="sendotp()" >Send otp</button>
                     <div  *ngIf="!otp_verify" class="input__box">
-                        <input type="text" placeholder="Verify otp" [(ngModel)]="otp" [ngModelOptions]="{standalone: true}" required>
+                        <input type="text" placeholder="Verify otp" [(ngModel)]="phone_number" />
                     </div>
-                    <button  (click)="verifyOTP()" *ngIf="!otp_verify" type="button">Verify otp</button>
+                    <button  *ngIf="!otp_verify" type="button">Verify otp</button>
                 </form>
             </div>
         </div>

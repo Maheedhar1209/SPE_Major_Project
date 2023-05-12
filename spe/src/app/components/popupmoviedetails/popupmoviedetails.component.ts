@@ -14,8 +14,10 @@ export class PopupmoviedetailsComponent {
   phone_number : any;
   movie_details :any;
   movie_name :any;
+  movie_img: any;
    constructor(private router:Router,private httpClient:HttpClient,private homepageservice:HomePageServiceService){
     this.movie_details=JSON.parse(localStorage.getItem("movie_details")!);
+    this.movie_img = JSON.parse(localStorage.getItem("movie_img")!).movie_img;
    // this.movie_name=JSON.parse(localStorage.getItem("movie_details")!).movie_name;
    }
  // accountSid = 'ACbcec39040fe22ddea4512e79e24b6c90';
@@ -49,6 +51,15 @@ export class PopupmoviedetailsComponent {
     });
   }
   gotohome(){
-   this.router.navigate(["/"]);
+   this.router.navigate(["/home"]);
+  }
+
+  addMyList() {
+    console.log(localStorage.getItem("movie_img"));
+    console.log("check");
+    let movie_title = JSON.parse(localStorage.getItem("movie_img")!).movie_name;
+    this.homepageservice.addtomylist(movie_title).subscribe((res:any)=> {
+      console.log(res);
+    });
   }
 }
