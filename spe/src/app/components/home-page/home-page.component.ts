@@ -16,7 +16,7 @@ import { waitForAsync } from '@angular/core/testing';
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./home-page.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -145,48 +145,48 @@ slidenext = "transform: translateX(0px);";
     );
   }
 
-  Genre(genre: string, id: string) {
-    let observable = this.service.postGenre(genre).subscribe(
-      resp=> {console.log(resp);
-        console.log(resp[0]['movie_img']);
-        console.log("in func " + this.ImagePath)
+  // Genre(genre: string, id: string) {
+  //   let observable = this.service.postGenre(genre).subscribe(
+  //     resp=> {console.log(resp);
+  //       console.log(resp[0]['movie_img']);
+  //       console.log("in func " + this.ImagePath)
 
-        var images = new Array();
-        for (let i=0; i<resp.length; i++)
-        {
-          images.push([resp[i]['movie_img'], resp[i]['movie_name']]);
-        }
+  //       var images = new Array();
+  //       for (let i=0; i<resp.length; i++)
+  //       {
+  //         images.push([resp[i]['movie_img'], resp[i]['movie_name']]);
+  //       }
 
-      //  const container = document.getElementById("cont");
+  //     //  const container = document.getElementById("cont");
 
-        const wrap = document.getElementById(id);
-        if (wrap)
-        wrap.innerHTML = "";
-        if (wrap){
-           wrap.style.transform = "translateX(0px)"
-          images.forEach(image => {
-            const item = document.createElement('div');
-            const style = document.createElement("style");
-            item.style.flex =  "0 0 33.33%";
-            item.style.padding = "10px";
-            item.style.boxSizing= "border-box";
-            const img = document.createElement('img');
-            img.style.width = "100%";
-            const head = document.createElement('h3');
-            head.textContent = image[1];
-            img.src = image[0];
-            item.appendChild(img);
-            item.appendChild(head);
-            wrap.appendChild(item);
-          //  container.style.overflow = "hidden";
-        });
-        // container?.append(wrap);
-        // console.log(container);
-      }
+  //       const wrap = document.getElementById(id);
+  //       if (wrap)
+  //       wrap.innerHTML = "";
+  //       if (wrap){
+  //          wrap.style.transform = "translateX(0px)"
+  //         images.forEach(image => {
+  //           const item = document.createElement('div');
+  //           const style = document.createElement("style");
+  //           item.style.flex =  "0 0 33.33%";
+  //           item.style.padding = "10px";
+  //           item.style.boxSizing= "border-box";
+  //           const img = document.createElement('img');
+  //           img.style.width = "100%";
+  //           const head = document.createElement('h3');
+  //           head.textContent = image[1];
+  //           img.src = image[0];
+  //           item.appendChild(img);
+  //           item.appendChild(head);
+  //           wrap.appendChild(item);
+  //         //  container.style.overflow = "hidden";
+  //       });
+  //       // container?.append(wrap);
+  //       // console.log(container);
+  //     }
       
-    }
-    );
-  }
+  //   }
+  //   );
+  // }
   shownotifications(){
     console.log(this.all_movies);
     this.toastr.success(this.all_movies, 'New Movies Added!', {
