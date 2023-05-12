@@ -16,8 +16,6 @@ import { waitForAsync } from '@angular/core/testing';
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrls: ['./home-page.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
@@ -53,29 +51,7 @@ sci_images: any= new Array();
 
 slidenext = "transform: translateX(0px);";
 
-  // constructor(private router:Router,private renderer: Renderer2, private el: ElementRef,private httpClient:HttpClient,private homepageservice:HomePageServiceService) {}
   constructor(private router:Router,private renderer: Renderer2, private el: ElementRef,private toastr: ToastrService,private httpClient:HttpClient,private homepageservice:HomePageServiceService) {}
-  // ngOnInit() {
-  //   this.divElement = this.el.nativeElement.querySelector('.slider-next');
-    
-  // }
-
-  // async newReleases(){
-  //   this.new_release = this.homepageservice.getnewreleases()
-  //   .subscribe((res : any)=>{
-  //     this.new_release=res;
-  //     this.all_movies="";
-  //     this.no_of_movies=0;
-  //    res.forEach((item: { id: number,phone_number:String,movie_name:String; }) => {
-  //     if (item.movie_name!=undefined){
-  //       this.no_of_movies=this.no_of_movies+1;
-  //      this.all_movies+=item.movie_name+",";
-  //     }
-      
-  //    });
-  //    this.show_no_of_movies=this.no_of_movies;
-  //   });
-  // }
   async newReleases() {
     this.new_images = this.homepageservice.getnewreleases();
     this.new_release = await this.new_images.toPromise();
@@ -99,12 +75,6 @@ slidenext = "transform: translateX(0px);";
     this.show_no_of_movies = this.no_of_movies;
   }
   ngOnInit() {
-    // if (!this.isLoaded)
-    // {
-    //   location.reload()
-    //   this.isLoaded = true
-    // }
-    //this.divElement = this.el.nativeElement.querySelector('.slider-next');
     this.newReleases()
     console.log("herllo")
     // this.homepageservice.getID
@@ -113,10 +83,6 @@ slidenext = "transform: translateX(0px);";
     this.myList()
     // this.router.navigate(['/home'])
   }
-  // slide(){
-  //   console.log("sss");
-  //   this.renderer.setStyle(this.divElement, 'transform', '`translateX(-${2*33.33}%)`');
-  // }
   moviesearch(){
       console.log(this.movie_title)
       if (this.movie_title=="" || this.movie_title == null && false)
@@ -142,51 +108,8 @@ slidenext = "transform: translateX(0px);";
       }
       
     }
-    );
-  }
 
-  // Genre(genre: string, id: string) {
-  //   let observable = this.service.postGenre(genre).subscribe(
-  //     resp=> {console.log(resp);
-  //       console.log(resp[0]['movie_img']);
-  //       console.log("in func " + this.ImagePath)
 
-  //       var images = new Array();
-  //       for (let i=0; i<resp.length; i++)
-  //       {
-  //         images.push([resp[i]['movie_img'], resp[i]['movie_name']]);
-  //       }
-
-  //     //  const container = document.getElementById("cont");
-
-  //       const wrap = document.getElementById(id);
-  //       if (wrap)
-  //       wrap.innerHTML = "";
-  //       if (wrap){
-  //          wrap.style.transform = "translateX(0px)"
-  //         images.forEach(image => {
-  //           const item = document.createElement('div');
-  //           const style = document.createElement("style");
-  //           item.style.flex =  "0 0 33.33%";
-  //           item.style.padding = "10px";
-  //           item.style.boxSizing= "border-box";
-  //           const img = document.createElement('img');
-  //           img.style.width = "100%";
-  //           const head = document.createElement('h3');
-  //           head.textContent = image[1];
-  //           img.src = image[0];
-  //           item.appendChild(img);
-  //           item.appendChild(head);
-  //           wrap.appendChild(item);
-  //         //  container.style.overflow = "hidden";
-  //       });
-  //       // container?.append(wrap);
-  //       // console.log(container);
-  //     }
-      
-  //   }
-  //   );
-  // }
   shownotifications(){
     console.log(this.all_movies);
     this.toastr.success(this.all_movies, 'New Movies Added!', {
@@ -204,84 +127,6 @@ slidenext = "transform: translateX(0px);";
     });
     this.router.navigate(["/"]);
   }
-  // ImagePath: string = "";
-  // constructor(private service: HomePageServiceService){}
-  // constructor(private http: HttpClient) { }
-
-  // getImg(){
-  //   this.myList();
-
-  //   //return this.ImagePath;
-  // }
-  // curr=0;
-  //  next(id: string) {
-  //   console.log("Button works");
-  //   var loc = document.getElementById(id);
-  //   console.log(loc?.className)
-  //   this.curr++;
-  //   if (this.curr >3) this.curr=0;
-  //   if (loc != undefined) {
-  //   loc.style.transform =  "translateX(-" + (200*this.curr).toString() + "px)";
-  //   }
-  //   // return;
-  // }
-
-  // prev(id: string) {
-  //   console.log("Button works");
-  //   var loc = document.getElementById(id);
-  //   this.curr--;
-  //   if (this.curr < 0) this.curr = 3;
-  //   if (loc != undefined) {
-  //     loc.style.transform = "translateX(-" + (200*this.curr).toString() + "px)";
-  //   }
-  // }
-
-  // httpHeaders = {
-  //   headers: new HttpHeaders({
-  //     'Content-Type': 'application/json',
-  //     'Access-Control-Allow-Origin': '*'
-  //   })
-  // };
-
-  // postMyList(user_id: String) {
-  //   let url = "http://localhost:8101/MyList";
-  //   return this.http.post<any>(url, user_id, this.httpHeaders);
-  // }
-  // ngOnInit(): void {
-      
-  // }
-
-// async myList() {
-//     let user_id = "1";
-//     let ind: string = "";
-//     // this.images = []
-//     // this.images = [[
-//     //   "https://movietitles.s3.ap-south-1.amazonaws.com/movie4.jpeg", "Racegurram"], ["https://movietitles.s3.ap-south-1.amazonaws.com/movie4.jpeg", "Racegurram"]]
-//   //  let prom = await this.homepageservice.postMyList(user_id)
-//   //  let observable = from(prom)
-//   try {
-//     const observable = this.homepageservice.postMyList(user_id);
-//     const resp = await lastValueFrom(observable);
-//     this.images = resp;
-//     console.log(this.images);
-//   } catch (error) {
-//     console.error(error);
-//   }
-
-//   //  this.homepageservice.postMyList(user_id).subscribe(
-//   //     resp=> {
-//   //       this.images = resp;
-//   //       console.log(resp)
-//   //       console.log(this.images)
-//   //       return resp
-//   //     }
-//   //   );
-
-//     // waitForAsync
-//    // console.log(this.images)
-//     this.my_list_images=this.images;
-//    // this.myList();
-//   }
   
 
 
@@ -302,53 +147,6 @@ async Genre() {
     this.movie_title = movie_name;
     this.moviesearch();
   }
-
-  // Genre(genre: string, id: string) {
-  //   let observable = this.homepageservice.postGenre(genre).subscribe(
-  //     resp=> {console.log(resp);
-  //       console.log(resp[0]['movie_img']);
-  //       console.log("in func " + this.ImagePath)
-
-  //       var images = new Array();
-  //       for (let i=0; i<resp.length; i++)
-  //       {
-  //         images.push([resp[i]['movie_img'], resp[i]['movie_name']]);
-  //       }
-
-  //     //  const container = document.getElementById("cont");
-
-  //       const wrap = document.getElementById(id);
-  //       if (wrap)
-  //       wrap.innerHTML = "";
-  //       if (wrap){
-  //          wrap.style.transform = "translateX(0px)"
-  //         images.forEach(image => {
-  //           const item = document.createElement('div');
-  //           const style = document.createElement("style");
-  //           item.style.flex =  "0 0 33.33%";
-  //           item.style.padding = "10px";
-  //           item.style.boxSizing= "border-box";
-  //           const img = document.createElement('img');
-  //           img.style.width = "100%";
-  //           const head = document.createElement('h3');
-  //           head.textContent = image[1];
-  //           img.src = image[0];
-  //           img.id = image[1];
-  //           img.addEventListener("click", function(this) {
-  //                     console.log("clicked: ", this.id);
-  //                   }) ;
-  //           item.appendChild(img);
-  //           item.appendChild(head);
-  //           wrap.appendChild(item);
-  //         //  container.style.overflow = "hidden";
-  //       });
-  //       // container?.append(wrap);
-  //       // console.log(container);
-  //     }
-      
-  //   }
-  //   );
-  // }
   
 
 }
