@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Netflix Homepage</title>
@@ -44,8 +46,7 @@
         <li (click)="logout()"><a style="cursor: pointer;" >Logout</a></li>
       </ul>
     </nav>
-   
-  
+
     <!-- Main Section -->
     <section id="main" *ngIf="!showElement">
       <div class="slider">
@@ -151,6 +152,24 @@
             </div>
          
           </div>
+          <div style=" display:flex; justify-content:center">
+            <button class="slider-prev" (click)="prev('scifi_slid')"
+            >
+            prev</button>
+            <button class="slider-next" (click)="prev('scifi_slid')"
+            >
+            next
+          </button>
+          </div>
+        <!-- </div> -->
+        
+        <h2 id="head">My List</h2>
+        <!-- let data = myList();
+        console.log(data); -->
+        <div id="cont" class="slider-container">
+          <div id="mylist" class="slider-wrapper">
+          
+          </div>
          
         </div>
         <!-- <div style=" display:flex; justify-content:center">
@@ -165,6 +184,7 @@
         </div> -->
        
       </div>
+
       
       <!--  -->
     </section>

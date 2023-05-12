@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { response } from 'express';
 import { Observable } from 'rxjs';
 import { Movie_Details } from '../models/Movie_Details.model';
