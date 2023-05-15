@@ -140,7 +140,7 @@ async Genre() {
   this.act_images = this.homepageservice.postGenre('Action')
   this.com_images = this.homepageservice.postGenre('Comedy')
   this.thrill_images = this.homepageservice.postGenre('Thriller')
-  this.sci_images = this.homepageservice.postGenre('Sci-Fi')
+  this.sci_images = this.homepageservice.postGenre('SciFi')
 }
 
   set (movie_name: string){

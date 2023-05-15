@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { Movie_Details } from '../models/Movie_Details.model';
 
 
-const baseUrl = 'http://localhost:8101';
+const baseUrl = 'http://localhost:8080';
 @Injectable({
   providedIn: 'root'
 })
@@ -86,8 +86,7 @@ export class HomePageServiceService {
   }
   sendOTP(phoneNumber:string) {
     console.log(phoneNumber);
-    return this.httpclient.get(`${baseUrl}/user/sendOTP?phone_number=${phoneNumber}`, 
-    {headers: this.httpHeaders});
+    return this.httpclient.get(`${baseUrl}/user/sendOTP?phone_number=${phoneNumber}`);
 }
 verifyOTP(phoneNumber:string,otp:string) {
     return this.httpclient.get(`${baseUrl}/user/verifyOTP?phone_number=${phoneNumber}&otp=${otp}`);
@@ -124,13 +123,13 @@ verifyOTPforadmin(phoneNumber:string,otp:string) {
 
 postMyList() {
   let token = localStorage.getItem('user_token')
-  let id = localStorage.getItem('id')
+  let id = " 1"
   if (token === null) {
     token = '';
   }
-  if (id === null) {
-    id ='';
-  }
+  // if (id === null) {
+  //   id ='';
+  // }
   let httpHeader = new HttpHeaders({
     'Content-Type': "application/json",
     'Authorization': token,

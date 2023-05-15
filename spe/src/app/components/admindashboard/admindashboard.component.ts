@@ -65,11 +65,18 @@ export class AdmindashboardComponent {
         
       });
     }
+    
     })
     this.showFormFlag = false;
   
 
     console.log("sdsds");
+    this.movie.movie_name==""
+    this.movie.genre=="" 
+    this.movie.about=="" 
+    this.movie.release_date=="" 
+    this.movie.ott_platforms=="" 
+    this.movie.movie_img==""
   }
   }
   onFileSelected(event: any) {
@@ -109,6 +116,14 @@ this.homepageservice.changemoviedetails(this.moviechange)
   
 }
 })
+this.movie.movie_name==""
+this.movie.genre=="" 
+this.movie.about=="" 
+this.movie.release_date=="" 
+this.movie.ott_platforms=="" 
+this.movie.movie_img==""
+
   }
+  
 }
 }
